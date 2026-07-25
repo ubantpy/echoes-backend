@@ -1,0 +1,19 @@
+{
+  "name": "echoes-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@huggingface/inference": "^4.13.23",
+    "openai": "^6.49.0"
+  },
+  "devDependencies": {
+    "@vercel/node": "^5.8.27"
+  }
+}
