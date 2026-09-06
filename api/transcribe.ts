@@ -3,12 +3,12 @@ import OpenAI from "openai";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method !== "POST") {
+export default async function handler(req: VercelRequest, res: VercelResponse){
+  if (req.method != "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  try {
+  try{
     const { audioBase64 } = req.body;
     const audioBuffer = Buffer.from(audioBase64, "base64");
     const audioBytes = new Uint8Array(audioBuffer);
@@ -22,7 +22,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
 
     return res.status(200).json({ text: transcription.text });
-  } catch (err: any) {
+  }
+  catch (err: any) {
     return res.status(500).json({ error: err.message });
   }
 }
